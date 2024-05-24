@@ -13,7 +13,6 @@ export default function App() {
         width="100%"
         height="auto"
       />
-      <h1>React YouTube Player</h1>
     </div>
   );
 }
