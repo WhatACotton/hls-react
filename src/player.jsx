@@ -6,7 +6,7 @@ export default function VideoPlayer(data) {
 console.log(data.videoSrc)
   const [playing, setPlaying] = useState(false)
   const [volume, setVolume] = useState(0.9)
-
+  const [mute, setMute] = useState(false)
   return (
     <>
     <ReactPlayer
@@ -15,6 +15,7 @@ console.log(data.videoSrc)
             autoPlay
             playing={playing}
             volume={volume}
+            muted={mute}
             width='100%'
             height='100%'
           />
@@ -32,6 +33,14 @@ console.log(data.videoSrc)
             }}/>
             <label for="volume">Volume</label>
           </div>
+          <button onClick={() => 
+          {
+            setMute(!mute)
+            console.log('mute:', mute)
+          }
+          }>
+            {mute ? 'mute' : 'unmute'}
+          </button>
           </>
   )
 }
