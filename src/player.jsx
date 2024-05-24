@@ -3,7 +3,6 @@ import ReactPlayer from "react-player";
 import React, { useState } from 'react'
 
 export default function VideoPlayer(data) {
-console.log(data.videoSrc)
   const [playing, setPlaying] = useState(false)
   const [volume, setVolume] = useState(0.9)
   const [mute, setMute] = useState(false)
@@ -26,13 +25,12 @@ console.log(data.videoSrc)
           <button onClick={() => 
           {
             setPlaying(!playing)
-            console.log(playing)
           }
           }>
             {playing ? '■' : '▶'}
           </button>
           <div>
-            <input type="range" id="volume" name="volume" min="0" max="1" step={0.1} onChange={(e)=>{
+            <input type="range" id="volume" name="volume" min="0" max="1" step={0.1} defaultValue={0.9} onChange={(e)=>{
               setVolume(e.target.value)
             }}/>
             <label for="volume">Volume</label>
@@ -40,7 +38,6 @@ console.log(data.videoSrc)
           <button onClick={() => 
           {
             setMute(!mute)
-            console.log('mute:', mute)
           }
           }>
             {mute ? 'unmute' : 'mute'}
@@ -48,7 +45,6 @@ console.log(data.videoSrc)
           <button onClick={() => 
           {
             setPip(!pip)
-            console.log('pip:', pip)
           }
           }>
             {pip ? 'unpip' : 'pip'}
