@@ -7,6 +7,7 @@ console.log(data.videoSrc)
   const [playing, setPlaying] = useState(false)
   const [volume, setVolume] = useState(0.9)
   const [mute, setMute] = useState(false)
+  const [pip, setPip] = useState(false)
   return (
     <>
     <ReactPlayer
@@ -16,6 +17,7 @@ console.log(data.videoSrc)
             playing={playing}
             volume={volume}
             muted={mute}
+            pip={pip}
             width='100%'
             height='100%'
           />
@@ -39,8 +41,17 @@ console.log(data.videoSrc)
             console.log('mute:', mute)
           }
           }>
-            {mute ? 'mute' : 'unmute'}
+            {mute ? 'unmute' : 'mute'}
           </button>
+          <button onClick={() => 
+          {
+            setPip(!pip)
+            console.log('pip:', pip)
+          }
+          }>
+            {pip ? 'unpip' : 'pip'}
+          </button>
+          
           </>
   )
 }
