@@ -20,6 +20,8 @@ console.log(data.videoSrc)
             pip={pip}
             width='100%'
             height='100%'
+            onEnablePIP={()=>{setPip(true)}}
+            onDisablePIP={()=>{setPip(false)}}
           />
           <button onClick={() => 
           {
@@ -51,7 +53,7 @@ console.log(data.videoSrc)
           }>
             {pip ? 'unpip' : 'pip'}
           </button>
-          
+
           </>
   )
 }
